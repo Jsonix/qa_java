@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="com.example.LionTest" time="0.007" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="com.example.LionTest" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2021.3.2"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -68,9 +68,9 @@
   <testcase classname="com.example.LionTest" name="checkThatGetKittensReturnsQty[0]" time="0.002"/>
   <testcase classname="com.example.LionTest" name="checkThatLionReturnsException[0]" time="0"/>
   <testcase classname="com.example.LionTest" name="checkThatGetFoodReturnsFoodForPredator[0]" time="0.001"/>
-  <testcase classname="com.example.LionTest" name="checkThatDoesHaveManeReturnsTrueOrFalse[0]" time="0.001"/>
+  <testcase classname="com.example.LionTest" name="checkThatDoesHaveManeReturnsTrueOrFalse[0]" time="0"/>
   <testcase classname="com.example.LionTest" name="checkThatGetKittensReturnsQty[1]" time="0.001"/>
-  <testcase classname="com.example.LionTest" name="checkThatLionReturnsException[1]" time="0.001"/>
+  <testcase classname="com.example.LionTest" name="checkThatLionReturnsException[1]" time="0"/>
   <testcase classname="com.example.LionTest" name="checkThatGetFoodReturnsFoodForPredator[1]" time="0.001"/>
   <testcase classname="com.example.LionTest" name="checkThatDoesHaveManeReturnsTrueOrFalse[1]" time="0"/>
 </testsuite>

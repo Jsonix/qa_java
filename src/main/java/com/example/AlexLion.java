@@ -8,6 +8,7 @@ public class AlexLion extends Lion{
         super(sex, feline);
     }
 
+    @Override
     public int getKittens() {
         return 0;
     }

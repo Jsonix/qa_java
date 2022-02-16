@@ -13,8 +13,40 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-@RunWith(Parameterized.class)
+
 public class LionTest {
+
+    @RunWith(Parameterized.class)
+    public static class ParameterizedLionTest{
+
+        @Mock
+        Feline feline;
+
+        @Parameterized.Parameters
+        public static Collection<Object[]> getSexData() {
+            return Arrays.asList(new Object[][]{
+                    {"Самец", true},
+                    {"Самка", false},
+            });
+        }
+
+        private final String sex;
+        private final boolean expected;
+
+        public ParameterizedLionTest(String sex, boolean expected) {
+            this.sex = sex;
+            this.expected = expected;
+        }
+
+        @Test
+        public void checkThatDoesHaveManeReturnsTrueOrFalse() throws Exception {
+            Lion lion = new Lion(sex, feline);
+            assertEquals(expected, lion.doesHaveMane());
+        }
+    }
+
+
+    public static class MockedLionTest{
 
     @Before
     public void init() {
@@ -31,28 +63,6 @@ public class LionTest {
         int expected = 1;
         int actual = lion.getKittens();
         assertEquals(expected, actual);
-    }
-
-    @Parameterized.Parameters
-    public static Collection<Object[]> getSexData() {
-        return Arrays.asList(new Object[][]{
-                {"Самец", true},
-                {"Самка", false},
-        });
-    }
-
-    private final String sex;
-    private final boolean expected;
-
-    public LionTest(String sex, boolean expected) {
-        this.sex = sex;
-        this.expected = expected;
-    }
-
-    @Test
-    public void checkThatDoesHaveManeReturnsTrueOrFalse() throws Exception {
-        Lion lion = new Lion(sex, feline);
-        assertEquals(expected, lion.doesHaveMane());
     }
 
 
@@ -75,5 +85,6 @@ public class LionTest {
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         List<String> actual = lion.getFood();
         assertEquals(expected, actual);
+    }
     }
 }
